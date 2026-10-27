@@ -1,17 +1,7 @@
 {
-  "name": "Cloud PC",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {}
-  },
-  "forwardPorts": [6080],
-  "hostRequirements": { "cpus": 4 }
-}{
-  "name": "Cloud PC",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/desktop-lite:1": {}
-  },
-  "forwardPorts": [6080],
-  "hostRequirements": { "cpus": 4 }
+  "name": "Windows 11 Environment",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "windows",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [8006, 3389]
 }
