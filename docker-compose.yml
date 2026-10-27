@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  windows:
+    image: dockur/windows:latest
+    container_name: windows11
+    environment:
+      VERSION: "win11"         # Mengunduh dan menginstal Windows 11 secara otomatis
+      RAM_SIZE: "8G"           # Alokasi RAM (sesuaikan dengan spesifikasi Codespace Anda)
+      CPU_CORES: "4"           # Alokasi CPU Cores
+      DISK_SIZE: "64G"         # Ukuran disk virtual
+    devices:
+      - /dev/kvm:/dev/kvm     # Menyalakan akselerasi KVM
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "8006:8006"            # Web GUI (noVNC Browser Access)
+      - "3389:3389/tcp"        # Remote Desktop Protocol (RDP)
+      - "3389:3389/udp"
+    restart: always
